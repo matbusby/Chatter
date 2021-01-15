@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Chatter</string>
+    <string name="text_view_post_chatter_title">Post Chatter</string>
+    <string name="text_view_view_chatter_title">View Chatter</string>
+    <string name="edit_text_post_chatter_hint">Type message here</string>
+    <string name="button_post_chatter">Post Chatter</string>
+    <string name="button_view_chatter">View Chatter</string>
+</resources>
