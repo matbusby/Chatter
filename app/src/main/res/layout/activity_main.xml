@@ -16,7 +16,7 @@
         android:textSize="24sp"/>
 
     <EditText
-        android:id="@+id/edit_text_chatter"
+        android:id="@+id/edit_text_post_chatter"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/edit_text_post_background"
