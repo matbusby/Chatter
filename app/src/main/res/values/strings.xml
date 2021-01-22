@@ -5,4 +5,7 @@
     <string name="edit_text_post_chatter_hint">Type message here</string>
     <string name="button_post_chatter">Post Chatter</string>
     <string name="button_view_chatter">View Chatter</string>
+    <string name="menu_item_view_chatter">View Chatter</string>
+    <string name="menu_item_view_chatter_list_view">Chatter List View</string>
+    <string name="menu_item_view_custom">Custom List View</string>
 </resources>

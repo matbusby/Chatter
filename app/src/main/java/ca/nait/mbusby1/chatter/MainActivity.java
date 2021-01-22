@@ -1,9 +1,14 @@
 package ca.nait.mbusby1.chatter;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 {
     Button buttonPost, buttonView;
     EditText editText;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -54,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view)
     {
-        switch(view.getId())
+        switch (view.getId())
         {
             case R.id.button_post_chatter:
             {
@@ -65,7 +71,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             case R.id.button_view_chatter:
             {
-                Toast.makeText(this,"View Chatter", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, ChatterListViewActivity.class);
+                startActivity(intent);
                 break;
             }
         }
@@ -85,12 +92,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             UrlEncodedFormEntity formEntity = new UrlEncodedFormEntity(postParameters);
             post.setEntity(formEntity);
             client.execute(post);
-        }
-        catch(Exception e)
+        } catch (Exception e)
         {
             Toast.makeText(this, "Error " + e, Toast.LENGTH_LONG).show();
         }
-    }
+    } // closes postToCloud
 
     private void getFromCloud()
     {
@@ -106,15 +112,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             in = new BufferedReader(input);
             String line = "";
 
-            while((line = in.readLine()) != null)
+            while ((line = in.readLine()) != null)
             {
                 textView.append(line + "\n");
             }
             in.close();
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             Toast.makeText(this, "Error: " + e, Toast.LENGTH_LONG).show();
         }
+    } // closes getFromCloud
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    } // closes onCreateOptionsMenu
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.menu_item_view_chatter_list_view:
+            {
+                Intent intent = new Intent(this, ChatterListViewActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.menu_item_custom_list_view:
+            {
+                Intent intent = new Intent(this, CustomListViewActivity.class);
+                startActivity(intent);
+                break;
+            }
+        }
+        return true;
     }
-}
+} // closes class
