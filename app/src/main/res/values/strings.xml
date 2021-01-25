@@ -8,4 +8,11 @@
     <string name="menu_item_view_chatter">View Chatter</string>
     <string name="menu_item_view_chatter_list_view">Chatter List View</string>
     <string name="menu_item_view_custom">Custom List View</string>
+    <string name="menu_item_preferences">Preferences</string>
+    <string name="preference_user_name_key">user_name</string>
+    <string name="preference_user_name_title">Login Name</string>
+    <string name="preference_user_name_summary">Use this to set or change your login name</string>
+    <string name="preference_password_key">password</string>
+    <string name="preference_password_title">Password</string>
+    <string name="preference_password_summary">Use this to set or change your password</string>
 </resources>

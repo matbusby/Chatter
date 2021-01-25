@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Chatter">
-        <activity android:name=".CustomListViewActivity"></activity>
+        <activity android:name=".PrefsActivity"></activity>
+        <activity android:name=".CustomListViewActivity" />
         <activity android:name=".ChatterListViewActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

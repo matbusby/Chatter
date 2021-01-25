@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -34,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 {
     Button buttonPost, buttonView;
     EditText editText;
+    SharedPreferences prefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -48,6 +51,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonView.setOnClickListener(this);
 
         editText = findViewById(R.id.edit_text_post_chatter);
+
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         if (android.os.Build.VERSION.SDK_INT > 9)
         {
@@ -80,6 +85,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void postToCloud(String message)
     {
+        String userNameKey = getResources().getString(R.string.preference_user_name_key);
+        String userName = prefs.getString(userNameKey, "Unknown");
         try
         {
             // this line creates a virtual browser
@@ -88,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             HttpPost post = new HttpPost("http://www.youcode.ca/JitterServlet");
             List<NameValuePair> postParameters = new ArrayList<NameValuePair>();
             postParameters.add(new BasicNameValuePair("DATA", message));
-            postParameters.add(new BasicNameValuePair("LOGIN_NAME", "Fancy Lad"));
+            postParameters.add(new BasicNameValuePair("LOGIN_NAME", userName));
             UrlEncodedFormEntity formEntity = new UrlEncodedFormEntity(postParameters);
             post.setEntity(formEntity);
             client.execute(post);
@@ -145,6 +152,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.menu_item_custom_list_view:
             {
                 Intent intent = new Intent(this, CustomListViewActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.menu_item_preferences:
+            {
+                Intent intent = new Intent(this, PrefsActivity.class);
                 startActivity(intent);
                 break;
             }
