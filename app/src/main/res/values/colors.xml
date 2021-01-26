@@ -8,12 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="primary">#FF018786</color>
-    <color name="primary_variant">#FF03DAC5</color>
-    <color name="linear_layout_post_background">#B6C6A4</color>
-    <color name="linear_layout_view_background">#97327E</color>
+    <color name="primary">#585481</color>
+    <color name="primary_variant">#f38d68</color>
+    <color name="linear_layout_post_background">#96c0b7</color>
+    <color name="linear_layout_view_background">#96c0b7</color>
     <color name="edit_text_post_background">#bbfefefe</color>
-    <color name="text_view_post_title">#990000</color>
-    <color name="text_view_view_title">#990000</color>
-    <color name="text_view_view_background">#bbfefefe</color>
+    <color name="text_view_post_title">#17a398</color>
+    <color name="text_view_view_title">#17a398</color>
+    <color name="text_view_view_background">#ee6c4d</color>
 </resources>
