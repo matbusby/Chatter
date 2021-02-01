@@ -30,7 +30,11 @@
         android:textColor="#000099"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:typeface="sans" />
+        android:typeface="sans"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"/>
+
 
 
 </RelativeLayout>

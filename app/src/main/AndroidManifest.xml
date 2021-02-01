@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Chatter">
-        <activity android:name=".PrefsActivity"></activity>
+        <activity android:name=".ObjectSpinnerActivity"></activity>
+        <activity android:name=".ColorSpinnerActivity" />
+        <activity android:name=".PrefsActivity" />
         <activity android:name=".CustomListViewActivity" />
         <activity android:name=".ChatterListViewActivity" />
         <activity android:name=".MainActivity">

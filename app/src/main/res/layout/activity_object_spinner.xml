@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/edit_text_post_background">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_view_view_object_spinner_title"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="6dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/text_view_view_title"
+        android:textSize="24sp" />
+
+    <Spinner
+        android:id="@+id/spinner_objects"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:dropDownWidth="match_parent"
+        android:layout_marginBottom="18dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="12dp"
+        android:text="@string/text_view_object_sender" />
+
+    <TextView
+        android:id="@+id/text_view_object_sender"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="#00ffff"
+        android:textSize="16sp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="18dp"
+        android:textStyle="bold"
+        android:background="#A3C9F0" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="12dp"
+        android:text="@string/text_view_object_date" />
+
+    <TextView
+        android:id="@+id/text_view_object_date"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:textColor="#00ffff"
+        android:textSize="16sp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="18dp"
+        android:textStyle="bold"
+        android:background="#A3C9F0" />
+
+    <TextView
+        android:id="@+id/text_view_object_message"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:textColor="#00ffff"
+        android:textSize="16sp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="18dp"
+        android:textStyle="bold"
+        android:background="#A3C9F0" />
+
+</LinearLayout>

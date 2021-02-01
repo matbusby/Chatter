@@ -2,17 +2,31 @@
     <string name="app_name">Chatter</string>
     <string name="text_view_post_chatter_title">Post Chatter</string>
     <string name="text_view_view_chatter_title">View Chatter</string>
+    <string name="text_view_view_colour_spinner_title">Choose Background Colour</string>
+    <string name="text_view_view_object_spinner_title">Object Spinner</string>
+    <string name="text_view_object_date">Date</string>
+    <string name="text_view_object_sender">Sender</string>
+    <string name="text_view_object_message">Message</string>
+
     <string name="edit_text_post_chatter_hint">Type message here</string>
+
     <string name="button_post_chatter">Post Chatter</string>
     <string name="button_view_chatter">View Chatter</string>
+
     <string name="menu_item_view_chatter">View Chatter</string>
     <string name="menu_item_view_chatter_list_view">Chatter List View</string>
     <string name="menu_item_view_custom">Custom List View</string>
     <string name="menu_item_preferences">Preferences</string>
+    <string name="menu_item_view_colour_spinner">Color Spinner</string>
+    <string name="menu_item_view_object_spinner">Object Spinner</string>
+
     <string name="preference_user_name_key">user_name</string>
     <string name="preference_user_name_title">Login Name</string>
     <string name="preference_user_name_summary">Use this to set or change your login name</string>
     <string name="preference_password_key">password</string>
     <string name="preference_password_title">Password</string>
     <string name="preference_password_summary">Use this to set or change your password</string>
+    <string name="preference_main_bg_key">main_bg</string>
+    <string name="preference_main_bg_title">Main Background Colour</string>
+    <string name="preference_main_bg_summary">Use this to set or change your main background colour</string>
 </resources>

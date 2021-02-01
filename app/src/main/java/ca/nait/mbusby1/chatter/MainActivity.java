@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.preference.PreferenceManager;
@@ -32,17 +33,25 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, SharedPreferences.OnSharedPreferenceChangeListener
 {
     Button buttonPost, buttonView;
     EditText editText;
     SharedPreferences prefs;
+    View mainView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        prefs.registerOnSharedPreferenceChangeListener(this);
+
+        mainView = findViewById(R.id.linear_layout_main);
+        int bgColor = prefs.getInt("ambil_warna_key", 0xffcecece);
+        mainView.setBackgroundColor(bgColor);
 
         buttonPost = findViewById(R.id.button_post_chatter);
         buttonPost.setOnClickListener(this);
@@ -51,8 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonView.setOnClickListener(this);
 
         editText = findViewById(R.id.edit_text_post_chatter);
-
-        prefs = PreferenceManager.getDefaultSharedPreferences(this);
 
         if (android.os.Build.VERSION.SDK_INT > 9)
         {
@@ -155,6 +162,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             }
+            case R.id.menu_item_colour_spinner:
+            {
+                Intent intent = new Intent(this, ColorSpinnerActivity.class);
+                startActivity(intent);
+                break;
+            }
+            case R.id.menu_item_object_spinner:
+            {
+                Intent intent = new Intent(this, ObjectSpinnerActivity.class);
+                startActivity(intent);
+                break;
+            }
             case R.id.menu_item_preferences:
             {
                 Intent intent = new Intent(this, PrefsActivity.class);
@@ -163,5 +182,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
         return true;
+    }
+
+    @Override
+    public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key)
+    {
+//        String bgColorKey = getResources().getString(R.string.preference_main_bg_key);
+//        String bgColor = prefs.getString(bgColorKey, "#cecece");
+//        mainView.setBackgroundColor(Color.parseColor(bgColor));
+        int bgColor = prefs.getInt("ambil_warna_key", 0xffcecece);
+        mainView.setBackgroundColor(bgColor);
     }
 } // closes class

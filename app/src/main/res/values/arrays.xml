@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="color_names">
+        <item name="dark_lilac">Dark Lilac</item>
+        <item name="teal_700">Teal</item>
+        <item name="light_teal">Light Teal</item>
+        <item name="salmon">Salmon</item>
+        <item name="white">White</item>
+        <item name="light_grey">Grey</item>
+    </string-array>
+
+    <string-array name="color_values">
+        <item name="dark_lilac">#585481</item>
+        <item name="teal_700">#17a398</item>
+        <item name="light_teal">#96c0b7</item>
+        <item name="salmon">#f38d68</item>
+        <item name="white">#ffffff</item>
+        <item name="light_grey">#BBC1C1C1</item>
+    </string-array>
+</resources>

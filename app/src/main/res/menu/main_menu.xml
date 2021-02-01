@@ -7,6 +7,12 @@
         android:id="@+id/menu_item_custom_list_view"
         android:title="@string/menu_item_view_custom" />
     <item
+        android:id="@+id/menu_item_colour_spinner"
+        android:title="@string/text_view_view_colour_spinner_title" />
+    <item
+        android:id="@+id/menu_item_object_spinner"
+        android:title="@string/menu_item_view_object_spinner" />
+    <item
         android:id="@+id/menu_item_preferences"
         android:title="@string/menu_item_preferences" />
 </menu>
